@@ -16,3 +16,42 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route basic
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('profil/{nama}', function ($nama) {
+    // $nama= "Nugraha A";
+    return view('pages.profil', compact('nama'));
+});
+
+Route::get('/biodata', function () {
+    $nama  = "Nugraha A";
+    $kelas = "XII RPL 3";
+    $agama = "Islam";
+    $alamat= "Cicaheum";
+    $status= "Pelajar";
+    return view('pages.biodata', compact(
+        'nama',
+        'kelas',
+        'agama',
+        'alamat',
+        'status'
+    ));
+});
+
+// Route Parameter
+Route::get('pesan/{makan}/{minum}/{harga}', function ($makan,$minum,$harga) {
+    return view('pages.pesan', compact(
+        'makan',
+        'minum',
+        'harga'
+    ));
+});
+
+// Route Opsional Parameter
+Route::get('order/{menu?}', function ($a = "-") {
+    return view('pages.order', compact('a'));
+});
