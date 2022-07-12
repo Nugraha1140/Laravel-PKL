@@ -1,5 +1,7 @@
 <?php
 
+// menggunakan / menginput LatihanController
+use App\Http\Controllers\LatihanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,11 +30,11 @@ Route::get('profil/{nama}', function ($nama) {
 });
 
 Route::get('/biodata', function () {
-    $nama  = "Nugraha A";
+    $nama = "Nugraha A";
     $kelas = "XII RPL 3";
     $agama = "Islam";
-    $alamat= "Cicaheum";
-    $status= "Pelajar";
+    $alamat = "Cicaheum";
+    $status = "Pelajar";
     return view('pages.biodata', compact(
         'nama',
         'kelas',
@@ -43,7 +45,7 @@ Route::get('/biodata', function () {
 });
 
 // Route Parameter
-Route::get('pesan/{makan}/{minum}/{harga}', function ($makan,$minum,$harga) {
+Route::get('pesan/{makan}/{minum}/{harga}', function ($makan, $minum, $harga) {
     return view('pages.pesan', compact(
         'makan',
         'minum',
@@ -56,10 +58,12 @@ Route::get('order/{menu?}', function ($a = "-") {
     return view('pages.order', compact('a'));
 });
 
-Route::get('pemesanan/{makanan?}/{minuman?}/{cemilan?}', function ($a = "Silahkan Pesan",$b = null ,$c = null) {
+Route::get('pemesanan/{makanan?}/{minuman?}/{cemilan?}', function ($a = "Silahkan Pesan", $b = null, $c = null) {
     return view('pages.pemesanan', compact(
         'a',
         'b',
         'c'
-));
+    ));
 });
+
+route::get('latihan/{nama?}/{alamat?}/{umur?}', [LatihanController::class, 'perkenalan']);
