@@ -55,3 +55,11 @@ Route::get('pesan/{makan}/{minum}/{harga}', function ($makan,$minum,$harga) {
 Route::get('order/{menu?}', function ($a = "-") {
     return view('pages.order', compact('a'));
 });
+
+Route::get('pemesanan/{makanan?}/{minuman?}/{cemilan?}', function ($a = "Silahkan Pesan",$b = null ,$c = null) {
+    return view('pages.pemesanan', compact(
+        'a',
+        'b',
+        'c'
+));
+});
