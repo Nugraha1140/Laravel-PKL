@@ -9,7 +9,28 @@
 </head>
 
 <body>
+    <fieldset>
+        <legend>
+            Data Siswa
+        </legend>
+        @foreach ($siswa as $murid)
+            Nama : {{ $murid['name'] }} <br>
+            Umur : {{ $murid['age'] }} <br>
 
+            Status :
+            @if ($murid['age'] > 17)
+                Anda Berhak Mendapat KTP
+            @else
+                Anda Belum Berhak Mendapatkan KTP
+            @endif
+            <br>
+            Hobi :
+            @foreach ($murid['hobi'] as $hobi)
+                <li>{{ $hobi }}</li>
+            @endforeach
+            <hr>
+        @endforeach
+    </fieldset>
 </body>
 
 </html>
