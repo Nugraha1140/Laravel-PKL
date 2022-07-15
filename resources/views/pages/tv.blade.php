@@ -9,13 +9,37 @@
 </head>
 
 <body>
-    @foreach ($tv as $tele)
-        <li>{{ $tele['nama'] }} <br>
-            Jam : {{ $tele['jam'] }}
-            Tanggal : {{ $tele['tanggal'] }}
+    <fieldset>
+        <legend>
+            Stasiun TV
+        </legend>
+        @foreach ($tv as $tele)
+            @foreach ($tele['stasiun'] as $stasiun)
+                <li>{{ $stasiun['nama'] }} <br>
+                    <table>
+                        <tr>
+                            <td> Acara TV</td>
+                            <td>:</td>
+                            <td> {{ $stasiun['acara'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Jam Tayang</td>
+                            <td>:</td>
+                            <td> {{ $stasiun['jam'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> Tanggal</td>
+                            <td>:</td>
+                            <td> {{ $stasiun['tanggal'] }}</td>
+                        </tr>
 
-        </li>
-    @endforeach
+
+                    </table>
+                </li>
+                <hr>
+            @endforeach
+        @endforeach
+    </fieldset>
 </body>
 
 </html>

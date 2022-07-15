@@ -72,3 +72,5 @@ route::get('skull/', [LatihanController::class, 'siswa']);
 
 route::get('kuli/', [LatihanController::class, 'kuli']);
 route::get('tv/', [LatihanController::class, 'tv']);
+route::get('belanja/', [LatihanController::class, 'belanja']);
+route::get('rapot/', [LatihanController::class, 'rapot']);
