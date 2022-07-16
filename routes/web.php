@@ -2,6 +2,7 @@
 
 // menggunakan / menginput LatihanController
 use App\Http\Controllers\LatihanController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,3 +75,6 @@ route::get('kuli/', [LatihanController::class, 'kuli']);
 route::get('tv/', [LatihanController::class, 'tv']);
 route::get('belanja/', [LatihanController::class, 'belanja']);
 route::get('rapot/', [LatihanController::class, 'rapot']);
+
+// route post
+route::get('post/', [PostController::class, 'tampil']);
