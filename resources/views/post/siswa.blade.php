@@ -17,17 +17,21 @@
             <table border="1">
                 <tr style="background-color: aqua">
                     <th>No</th>
-                    <th>ID</th>
-                    <th>Judul</th>
-                    <th>Konten</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Agama</th>
+                    <th>Sekolah</th>
+                    <th>Umur</th>
                 </tr>
                 @php $no = 1; @endphp
-                @foreach ($post as $data)
+                @foreach ($siswa as $data)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $data->id }}</td>
-                        <td> <a href="{{ url('post/' . $data->id) }} "> {{ $data['title'] }}</a></td>
-                        <td>{{ $data->content }}</td>
+                        <td>{{ $data['nama'] }}</td>
+                        <td>{{ $data['alamat'] }}</a></td>
+                        <td>{{ $data['agama'] }}</td>
+                        <td>{{ $data['sekolah'] }}</td>
+                        <td>{{ $data['umur'] }}</td>
                     </tr>
                 @endforeach
             </table>

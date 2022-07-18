@@ -3,6 +3,7 @@
 // menggunakan / menginput LatihanController
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,3 +79,12 @@ route::get('rapot/', [LatihanController::class, 'rapot']);
 
 // route post
 route::get('post/', [PostController::class, 'tampil']);
+route::get('post/{id}', [PostController::class, 'search']);
+route::get('post/judul/{title}', [PostController::class, 'search_title']);
+route::get('post/edit/{id}/{title}/{content}', [PostController::class, 'edit']);
+route::get('post/tambah/{title}/{content}', [PostController::class, 'tambah']);
+route::get('post/delete/{id}', [PostController::class, 'hapus']);
+
+// route sekolah
+route::get('siswa/', [SekolahController::class, 'tampil']);
+route::get('guru/', [SekolahController::class, 'tamp']);

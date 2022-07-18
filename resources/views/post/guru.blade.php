@@ -17,22 +17,29 @@
             <table border="1">
                 <tr style="background-color: aqua">
                     <th>No</th>
-                    <th>ID</th>
-                    <th>Judul</th>
-                    <th>Konten</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Mata Pelajatan</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Umur</th>
                 </tr>
                 @php $no = 1; @endphp
-                @foreach ($post as $data)
+                @foreach ($guru as $data)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $data->id }}</td>
-                        <td> <a href="{{ url('post/' . $data->id) }} "> {{ $data['title'] }}</a></td>
-                        <td>{{ $data->content }}</td>
+                        <td>{{ $data['nama'] }}</td>
+                        <td>{{ $data['alamat'] }}</a></td>
+                        <td>{{ $data['mapel'] }}</td>
+                        <td>{{ $data['pendidikan'] }}</td>
+                        <td>{{ $data['umur'] }}</td>
                     </tr>
                 @endforeach
             </table>
         </marquee>
     </fieldset>
+</body>
+
+</html>
 </body>
 
 </html>
