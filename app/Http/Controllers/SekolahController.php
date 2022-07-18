@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Guru;
+use App\Models\Jurusan;
 use App\Models\Siswa;
-
-// use App\Models\Jurusan;
 
 class SekolahController extends Controller
 {
@@ -22,10 +21,10 @@ class SekolahController extends Controller
         $guru = Guru::all();
         return view('post.guru', compact('guru'));
     }
-     public function tamp()
+    public function tam()
     {
 
-        $guru = Guru::all();
-        return view('post.guru', compact('guru'));
+        $jurusan = Jurusan::all();
+        return view('post.jurusan', compact('jurusan'));
     }
 }

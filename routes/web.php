@@ -1,6 +1,7 @@
 <?php
 
 // menggunakan / menginput LatihanController
+use App\Http\Controllers\BaruController;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SekolahController;
@@ -88,3 +89,8 @@ route::get('post/delete/{id}', [PostController::class, 'hapus']);
 // route sekolah
 route::get('siswa/', [SekolahController::class, 'tampil']);
 route::get('guru/', [SekolahController::class, 'tamp']);
+route::get('jurusan/', [SekolahController::class, 'tam']);
+
+// route baru
+route::get('barang/supplier/pembeli/pembayaran/transaksi', [BaruController::class, 'a']);
+// route::get('supplier/', [BaruController::class, 'b']);

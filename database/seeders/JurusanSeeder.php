@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Illuminate\Database\Seeder;
 
 class JurusanSeeder extends Seeder
@@ -13,44 +14,28 @@ class JurusanSeeder extends Seeder
      */
     public function run()
     {
-         $co = [
+        $con = [
             [
-                'nama' => 'Dinar Arya Saputra',
-                'alamat' => 'Kamp. Sukaluyu',
-                'agama' => 'Islam',
-                'sekolah' => 'SMK ASSALAAM BANDUNG',
-                'umur' => '18 Tahun',
+                'kode_jurusan' => '1101A',
+                'jurusan' => 'Rekayasa Perangkat Lunak',
             ],
             [
-                'nama' => 'Meiii',
-                'alamat' => 'Cibaduyut',
-                'agama' => 'Islam',
-                'sekolah' => 'SMK ASSALAAM BANDUNG',
-                'umur' => '17 Tahun',
+                'kode_jurusan' => '1101B',
+                'jurusan' => 'Teknik Kendaraan Ringan Otomotif',
             ],
             [
-                'nama' => 'Ian Crud',
-                'alamat' => 'TKI',
-                'agama' => 'Islam',
-                'sekolah' => 'SMK ASSALAAM BANDUNG',
-                'umur' => '17 Tahun',
+                'kode_jurusan' => '1101C',
+                'jurusan' => 'Teknik Sepeda Motor',
             ],
             [
-                'nama' => 'King Hadad',
-                'alamat' => 'RancaManyar',
-                'agama' => 'Islam',
-                'sekolah' => 'SMK ASSALAAM BANDUNG',
-                'umur' => '19 Tahun',
+                'kode_jurusan' => '1101E',
+                'jurusan' => 'Tata Boga',
             ],
             [
-                'nama' => 'Lord Alex',
-                'alamat' => 'Sayati Univers',
-                'agama' => 'Islam',
-                'sekolah' => 'SMK ASSALAAM BANDUNG',
-                'umur' => '16 Tahun',
+                'kode_jurusan' => '1101F',
+                'jurusan' => 'Multimedia',
             ],
         ];
-        DB::table('siswas')->insert($co);
-    }
+        DB::table('jurusans')->insert($con);
     }
 }
